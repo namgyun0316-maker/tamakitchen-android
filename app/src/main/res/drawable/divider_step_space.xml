@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 단계들 사이 여백 높이 -->
+    <size android:height="24dp" />
+    <!-- 투명 색이면 그냥 빈 공간처럼 보임 -->
+    <solid android:color="@android:color/transparent" />
+</shape>

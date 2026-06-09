@@ -2,44 +2,192 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/tamakitchen_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/tamakitchen_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="28">
 
-        <!-- 로그인 액티비티 - 앱 시작점 -->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
         <activity
-            android:name=".LoginActivity"
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="oauth"
+                    android:scheme="${kakaoScheme}" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.onboarding.InviteDeepLinkActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="kakaolink"
+                    android:scheme="${kakaoScheme}" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="shared"
+                    android:pathPrefix="/invite"
+                    android:scheme="myfridge" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyApplication.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- 메인 액티비티 -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
 
-        <activity android:name=".ui.shopping.AddItemActivity" />
-         <!-- FridgeAddActivity 추가 -->
         <activity
-            android:name=".ui.shopping.FridgeAddActivity"
+            android:name=".ui.shopping.AddItemActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.shopping.ReceiptScannerActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.shopping.ReceiptReviewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.fridge.FridgeAddActivity"
+            android:exported="false"
             android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".ui.recipe.RecipeWriteActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.fusion.FusionActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.recipe.RecipeDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.mealplan.MealPlanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.mealplan.MealPlanRecipeCompareActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyApplication.UCrop" />
+
+        <activity
+            android:name=".ui.menu.CalculatorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.menu.LedgerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.menu.InquiryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".ui.menu.ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.onboarding.OnboardingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.menu.ToolsSettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.onboarding.SharedFridgeManageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.shop.ShopActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.attendance.AttendanceActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.collection.CollectionBookActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.checklist.ChecklistActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.fusion.FusionRecipeBookActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.mealplan.MealPlanWeeklyMissingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.menu.FavoriteRecipeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.menu.LedgerReceiptImportActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.recipe.MyRecipeActivity"
+            android:exported="false" />
 
     </application>
 

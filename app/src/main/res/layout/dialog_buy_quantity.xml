@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 제목 -->
+        <TextView
+            android:id="@+id/tvItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="먹이"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1F1F1F"
+            android:gravity="center"
+            android:includeFontPadding="false"/>
+
+        <!-- 단가 -->
+        <TextView
+            android:id="@+id/tvUnitPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="단가: 1 코인"
+            android:textSize="14sp"
+            android:textColor="#5A5A5A"
+            android:gravity="center"
+            android:layout_marginTop="6dp"
+            android:includeFontPadding="false"/>
+
+        <!-- 수량 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="18dp">
+
+            <!-- minus -->
+            <com.namgyun.tamakitchen.ui.shop.RoundQtyButton
+                android:id="@+id/btnMinus"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <!-- qty -->
+            <TextView
+                android:id="@+id/tvQty"
+                android:layout_width="70dp"
+                android:layout_height="48dp"
+                android:text="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1F1F1F"
+                android:gravity="center"
+                android:includeFontPadding="false"/>
+
+            <!-- plus -->
+            <!-- plus -->
+            <com.namgyun.tamakitchen.ui.shop.RoundQtyButton
+                android:id="@+id/btnPlus"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+        </LinearLayout>
+
+        <!-- 총 가격 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="14dp">
+
+            <TextView
+                android:id="@+id/tvTotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총 "
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#1F1F1F"/>
+
+            <TextView
+                android:id="@+id/tvTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#1F1F1F"
+                android:layout_marginEnd="4dp"/>
+
+            <ImageView
+                android:id="@+id/ivCoin"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_coin"/>
+
+        </LinearLayout>
+
+        <!-- 버튼 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="120dp"
+                android:layout_height="44dp"
+                android:text="취소"
+                android:textAllCaps="false"
+                app:cornerRadius="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBuy"
+                android:layout_width="120dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="12dp"
+                android:text="구매"
+                android:textAllCaps="false"
+                app:cornerRadius="16dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

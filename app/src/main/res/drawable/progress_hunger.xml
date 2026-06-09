@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 게이지 배경 -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#E3E5EC"/>
+        </shape>
+    </item>
+
+    <!-- 진행 게이지 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="8dp"/>
+                <!-- 더 옅은 파스칼 블루 -->
+                <solid android:color="#BFDCEF"/>
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

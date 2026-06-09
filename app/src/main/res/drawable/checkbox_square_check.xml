@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ✅ 체크된 상태: 파란 배경 + 흰색 ✓ -->
+    <item android:state_checked="true">
+        <layer-list>
+
+            <!-- 배경 사각형 -->
+            <item>
+                <shape android:shape="rectangle">
+                    <size
+                        android:width="22dp"
+                        android:height="22dp" />
+                    <solid android:color="#7FB7C8" />
+                    <corners android:radius="4dp" />
+                </shape>
+            </item>
+
+            <!-- ✅ 체크 마크 (여기가 핵심: <drawable> 금지, <item android:drawable> 사용) -->
+            <item
+                android:drawable="@drawable/ic_check_mark"
+                android:gravity="center" />
+
+        </layer-list>
+    </item>
+
+    <!-- ✅ 체크 안 된 상태: 흰 배경 + 테두리 -->
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:width="22dp"
+                android:height="22dp" />
+            <solid android:color="@android:color/white" />
+            <stroke
+                android:width="2dp"
+                android:color="#7FB7C8" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+
+</selector>

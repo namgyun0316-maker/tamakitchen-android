@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recipeWriteScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:clipToPadding="false"
+    android:paddingBottom="120dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/white">
+
+        <!-- 대표 이미지 -->
+        <ImageView
+            android:id="@+id/ivMainImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bg_recipe_placeholder"
+            android:background="@android:color/white" />
+
+        <!-- 대표 이미지 선택 버튼 -->
+        <Button
+            android:id="@+id/btnSelectMainImage"
+            style="@style/AppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="대표 이미지 선택"
+            android:backgroundTint="#87CEEB"
+            android:textColor="@android:color/white"
+            android:layout_gravity="start" />
+
+        <!-- 카테고리 선택 (한 줄로 나열 + 넘치면 자동 줄바꿈) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flowCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="btnKorean,btnWestern,btnJapanese,btnChinese,btnDessert,btnDiet,btnEtc"
+                app:flow_horizontalGap="8dp"
+                app:flow_verticalGap="8dp"
+                app:flow_wrapMode="chain"
+                app:flow_horizontalStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnKorean"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="한식"
+                android:textSize="14sp"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnWestern"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="양식"
+                android:textSize="14sp"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnJapanese"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="일식"
+                android:textSize="14sp"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnChinese"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="중식"
+                android:textSize="14sp"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnDessert"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="디저트"
+                android:textSize="14sp"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnDiet"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="다이어트"
+                android:textSize="14sp"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnEtc"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:minWidth="0dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="기타"
+                android:textSize="14sp"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 레시피 이름 -->
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="레시피 이름"
+            android:textSize="16sp"
+            android:background="@android:color/transparent"
+            android:gravity="start"
+            android:textAlignment="viewStart" />
+
+        <!-- 한 줄 요약 -->
+        <EditText
+            android:id="@+id/etSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="레시피 한 줄 설명"
+            android:textSize="14sp"
+            android:background="@android:color/transparent"
+            android:gravity="start"
+            android:textAlignment="viewStart" />
+
+        <!-- 필수 재료 -->
+        <TextView
+            android:id="@+id/tvRequiredTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="필수 재료"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/etIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="필수 재료를 콤마(,)로 구분해서 입력"
+            android:textSize="14sp"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:gravity="top|start"
+            android:background="@android:color/transparent" />
+
+        <!-- 선택 재료 -->
+        <TextView
+            android:id="@+id/tvOptionalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="선택 재료"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/etOptionalIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="선택 재료를 콤마(,)로 구분해서 입력"
+            android:textSize="14sp"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:gravity="top|start"
+            android:background="@android:color/transparent" />
+
+        <!-- 대체 가능 재료 -->
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="대체 가능 재료"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <!-- ✅ 여기 텍스트가 잘리던 문제 해결: includeFontPadding=true + 세로패딩 -->
+        <TextView
+            android:id="@+id/tvSubGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="대표재료 → 대체재료"
+            android:textSize="13sp"
+            android:textColor="#777777"
+            android:includeFontPadding="true"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp" />
+
+        <!-- ✅ 1줄 입력 (ConstraintLayout로 안정 배치) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSubInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/etSubOriginal"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="대표재료"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@android:color/transparent"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1" />
+
+            <TextView
+                android:id="@+id/tvArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="→"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:includeFontPadding="true"
+                app:layout_constraintStart_toEndOf="@id/etSubOriginal"
+                app:layout_constraintEnd_toStartOf="@id/etSubAlternatives"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp" />
+
+            <EditText
+                android:id="@+id/etSubAlternatives"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:hint="대체재료"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@android:color/transparent"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                app:layout_constraintStart_toEndOf="@id/tvArrow"
+                app:layout_constraintEnd_toStartOf="@id/btnAddSubstitute"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="2" />
+
+            <Button
+                android:id="@+id/btnAddSubstitute"
+                style="@style/AppButton"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:text="추가"
+                android:textAllCaps="false"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSubstitutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
+            android:background="@android:color/white" />
+
+        <!-- 상세 재료 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#DDDDDD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="상세 재료"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/etDetailName"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="재료명"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@android:color/transparent"
+                android:textColor="@android:color/black" />
+
+            <EditText
+                android:id="@+id/etDetailQtyText"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="수량"
+                android:singleLine="true"
+                android:padding="10dp"
+                android:background="@android:color/transparent"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rgDetailType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbDetailRequired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="필수"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rbDetailOptional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="선택" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnAddDetailIngredient"
+            style="@style/AppButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="상세 재료 추가"
+            android:textAllCaps="false"
+            android:backgroundTint="#87CEEB"
+            android:textColor="@android:color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDetailIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
+            android:background="@android:color/white" />
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#DDDDDD" />
+
+        <!-- 조리 단계 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="조리 단계"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="start"
+                android:textAlignment="viewStart" />
+
+            <Button
+                android:id="@+id/btnPrevStep"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="이전 단계"
+                android:textAllCaps="false"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnAddStep"
+                style="@style/AppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="단계 추가"
+                android:textAllCaps="false"
+                android:backgroundTint="#87CEEB"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
+            android:background="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/AppButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="레시피 등록"
+            android:textAllCaps="false"
+            android:backgroundTint="#87CEEB"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</ScrollView>

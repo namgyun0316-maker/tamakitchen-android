@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="22dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="초대코드가 생성됐어요 🎉"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2E3A4B" />
+
+            <TextView
+                android:id="@+id/btnClose"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="✕"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#8A94A6"
+                android:background="@drawable/bg_pill_outline_light" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="아래 코드를 공유하면 상대가 참여할 수 있어요."
+            android:textSize="13sp"
+            android:textColor="#8A94A6" />
+
+        <!-- 코드 박스 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:background="@drawable/bg_soft_info"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tvInviteCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A1B2C3"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#2E3A4B" />
+
+            <TextView
+                android:id="@+id/tvInviteExpire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="만료: 2026-02-08 10:00"
+                android:textSize="12sp"
+                android:textColor="#8A94A6" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnCopy"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="복사하기"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_btn_primary" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

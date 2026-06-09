@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingStart="22dp"
+    android:paddingEnd="22dp">
+
+    <!-- ✅ 중앙 컨테이너 -->
+    <LinearLayout
+        android:id="@+id/centerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <!-- 제목 -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="냉장고 유형을 선택해줘"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:fontFamily="@font/gmarket_sans_bold"/>
+
+        <!-- 설명 -->
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="혼자 쓰는지, 함께 쓰는지 알려줘"
+            android:textSize="13sp"
+            android:textColor="#7A7A7A"
+            android:fontFamily="@font/gmarket_sans_light"/>
+
+        <!-- 카드 영역 -->
+        <LinearLayout
+            android:id="@+id/rowCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- 개인 냉장고 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPersonal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:strokeWidth="2dp"
+                app:strokeColor="#EAEAEA">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:src="@drawable/ic_fridge_personal"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="개인 냉장고"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:fontFamily="@font/gmarket_sans_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="나만 사용해요"
+                        android:textSize="13sp"
+                        android:textColor="#9A9A9A"
+                        android:fontFamily="@font/gmarket_sans_light"
+                        android:gravity="center"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="1dp"/>
+
+            <!-- 공동 냉장고 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardShared"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:strokeWidth="2dp"
+                app:strokeColor="#EAEAEA">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:src="@drawable/ic_fridge_shared"
+                        android:scaleType="fitCenter"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="공동 냉장고"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:fontFamily="@font/gmarket_sans_medium"/>
+
+                    <!-- ✅ FIX: ... 안 뜨고 전체 문장 보이게 (2줄 허용) -->
+                    <TextView
+                        android:id="@+id/tvSharedDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="가족/룸메와 공유해요"
+                        android:textSize="13sp"
+                        android:textColor="#9A9A9A"
+                        android:fontFamily="@font/gmarket_sans_light"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:maxLines="2"
+                        android:lineSpacingExtra="1dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

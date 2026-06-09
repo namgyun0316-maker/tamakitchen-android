@@ -6,23 +6,23 @@
     android:padding="16dp"
     android:gravity="center_vertical">
 
-    <!-- 아이콘 ImageView -->
+    <!-- 아이콘 (20% 확대) -->
     <ImageView
         android:id="@+id/iv_item_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginEnd="12dp"
         android:scaleType="fitCenter"
-        android:background="@drawable/button_outline"
-        android:padding="8dp" />
+        android:padding="4dp" />
 
-    <!-- 텍스트 정보들 -->
+    <!-- 텍스트 영역 -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
 
+        <!-- 이름 -->
         <TextView
             android:id="@+id/tv_item_name"
             android:layout_width="wrap_content"
@@ -32,6 +32,7 @@
             android:textStyle="bold"
             android:textColor="#333333" />
 
+        <!-- 보관방법 + 수량 -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,24 +40,36 @@
             android:layout_marginTop="4dp">
 
             <TextView
-                android:id="@+id/tv_item_category"
+                android:id="@+id/tv_storage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="채소"
+                android:text="냉장"
                 android:textSize="14sp"
-                android:textColor="#666666"
-                android:layout_marginEnd="8dp" />
+                android:textColor="#666666"/>
 
             <TextView
                 android:id="@+id/tv_item_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:text="1개"
                 android:textSize="14sp"
                 android:textColor="#666666" />
-
         </LinearLayout>
-
     </LinearLayout>
+
+    <!-- 유통기한 (오른쪽) -->
+    <TextView
+        android:id="@+id/tv_item_expiry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D-3"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#FF4444"
+        android:layout_marginStart="8dp"
+        android:padding="4dp"
+        android:minWidth="40dp"
+        android:gravity="center"/>
 
 </LinearLayout>

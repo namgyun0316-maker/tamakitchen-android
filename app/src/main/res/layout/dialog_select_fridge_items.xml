@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_select_fridge_round_v1"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="18dp"
+    android:paddingBottom="18dp">
+
+    <!-- 타이틀 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="냉장고에 등록할 재료 선택"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="#111111"
+        android:gravity="center_horizontal"
+        android:paddingBottom="10dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSelectAll"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="전체선택"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_btn_dialog_confirm_v2"
+        app:backgroundTint="@null"
+        app:rippleColor="@null"
+        android:layout_gravity="start"
+        android:layout_marginBottom="10dp" />
+
+
+    <!-- 목록 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:overScrollMode="never" />
+
+    <!-- 버튼 줄 -->
+    <LinearLayout
+        android:id="@+id/rowButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="취소"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:background="@drawable/bg_btn_dialog_cancel_v2"
+            app:backgroundTint="@null"
+            app:rippleColor="@null"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="등록"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_btn_dialog_confirm_v2"
+            app:backgroundTint="@null"
+            app:rippleColor="@null"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp"
+        android:background="@drawable/bg_dialog_card">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OWNER는 바로 나갈 수 없어요"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/pascal_blue"
+            android:fontFamily="@font/gmarket_sans_medium"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="먼저 다른 멤버에게 OWNER 권한을 위임한 뒤 나갈 수 있어요."
+            android:textSize="15sp"
+            android:textColor="@color/gray_text_soft"
+            android:fontFamily="@font/gmarket_sans_light"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="4dp" />
+
+        <TextView
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:text="확인"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/gmarket_sans_medium"
+            android:background="@drawable/bg_btn_pascal"
+            android:includeFontPadding="false" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dialog_round_white"
+        android:padding="20dp">
+
+        <!-- 타이틀 -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="재료 전체 삭제"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#111111" />
+
+        <!-- 설명 -->
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="정말로 모든 재료를 삭제할까요?"
+            android:textSize="15sp"
+            android:lineSpacingExtra="3dp"
+            android:textColor="#555555" />
+
+        <!-- 주의 문구: 버튼 위 -->
+        <TextView
+            android:id="@+id/tvHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="이 작업은 되돌릴 수 없습니다."
+            android:textSize="12sp"
+            android:textColor="#888888" />
+
+        <!-- 버튼 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <!-- 취소: 파스칼블루 아웃라인 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="취소"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="14dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/pascal_blue"
+                android:textColor="@color/pascal_blue"
+                app:backgroundTint="@android:color/transparent" />
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="1dp" />
+
+            <!-- 전체 삭제: 파스칼블루 솔리드 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeleteAll"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="전체 삭제"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="14dp"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/pascal_blue" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

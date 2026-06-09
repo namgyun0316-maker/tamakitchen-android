@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="#74B4C4"/>
+    <!-- 이미지 기준 민트 하늘색 -->
+
+    <corners android:radius="24dp"/>
+
+</shape>

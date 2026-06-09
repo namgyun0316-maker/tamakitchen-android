@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTools"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#E9EDF2"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolsInnerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="18dp"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="집에 있는 조리도구를 골라줘"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#2A2A2A"
+                android:fontFamily="@font/gmarket_sans_bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- ✅ 8개 카드: XML에서 아이콘/텍스트를 바로 지정 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolAirFryer"
+                style="@style/ToolCardStyle"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+                <include layout="@layout/item_tool_content_air_fryer"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolOven"
+                style="@style/ToolCardStyle">
+
+                <include layout="@layout/item_tool_content_oven"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolMicrowave"
+                style="@style/ToolCardStyle">
+
+                <include layout="@layout/item_tool_content_microwave"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolBlender"
+                style="@style/ToolCardStyle">
+
+                <include layout="@layout/item_tool_content_blender"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolRiceCooker"
+                style="@style/ToolCardStyle">
+
+                <include layout="@layout/item_tool_content_rice_cooker"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolSteamer"
+                style="@style/ToolCardStyle">
+
+                <include layout="@layout/item_tool_content_steamer"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolGasRange"
+                style="@style/ToolCardStyle">
+
+                <include layout="@layout/item_tool_content_gas_range"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/toolInduction"
+                style="@style/ToolCardStyle">
+
+                <include layout="@layout/item_tool_content_induction"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flowTools"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:flow_wrapMode="aligned"
+                app:flow_maxElementsWrap="2"
+                app:flow_horizontalGap="14dp"
+                app:flow_verticalGap="14dp"
+                app:flow_horizontalStyle="spread"
+                app:flow_horizontalAlign="center"
+                app:constraint_referenced_ids="toolAirFryer,toolOven,toolMicrowave,toolBlender,toolRiceCooker,toolSteamer,toolGasRange,toolInduction"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

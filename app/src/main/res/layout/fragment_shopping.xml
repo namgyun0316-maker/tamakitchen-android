@@ -6,112 +6,238 @@
     android:background="#F8F9FA"
     android:orientation="vertical">
 
-    <!-- 날짜 이동 바 -->
+    <!-- ✅ 날짜 이동 바 (디자인 개선) -->
     <LinearLayout
         android:id="@+id/date_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:gravity="center">
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:gravity="center"
+        android:background="#EAF8FF">
 
-        <TextView
-            android:id="@+id/btn_prev_date"
-            android:layout_width="48dp"
-            android:layout_height="40dp"
-            android:text="&lt;"
-            android:textSize="18sp"
-            android:textColor="#666666"
-            android:gravity="center"
-            android:background="@drawable/button_outline"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:strokeColor="#D7E6F2"
+            app:strokeWidth="1dp"
+            android:backgroundTint="#FFFFFF">
 
-        <TextView
-            android:id="@+id/tv_current_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:text="2025-09-19"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#2E3A4B" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
 
-        <TextView
-            android:id="@+id/btn_next_date"
-            android:layout_width="48dp"
-            android:layout_height="40dp"
-            android:text="&gt;"
-            android:textSize="18sp"
-            android:textColor="#666666"
-            android:gravity="center"
-            android:background="@drawable/button_outline"/>
+                <TextView
+                    android:id="@+id/btn_prev_date"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="‹"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E3A4B"
+                    android:background="@drawable/bg_date_nav_btn" />
+
+                <TextView
+                    android:id="@+id/tv_current_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="2026-01-20"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E3A4B"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/btn_next_date"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="›"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E3A4B"
+                    android:background="@drawable/bg_date_nav_btn" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 
-    <!-- 완료 삭제 + 추가 버튼 -->
     <LinearLayout
+        android:id="@+id/layout_store"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical">
 
-        <Button
-            android:id="@+id/btn_clear_completed"
+        <LinearLayout
+            android:id="@+id/tv_store_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="완료 삭제"
-            android:backgroundTint="#87CEEB"
-            android:textColor="@android:color/white"/>
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="14dp"
+            android:paddingEnd="12dp"
+            android:background="@drawable/bg_store_chip"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_store_24"
+                android:tint="#2E3A4B" />
+
+            <TextView
+                android:id="@+id/tv_store_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="판매점: 미선택"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#2E3A4B" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_chevron_down_24"
+                android:tint="#6B778C" />
+        </LinearLayout>
 
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_add_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:backgroundTint="#87CEEB"
-            app:tint="@android:color/white"
-            app:srcCompat="@android:drawable/ic_input_add" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_scan"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#D7E6F2"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:backgroundTint="#FFFFFF">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:scaleType="centerInside"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:srcCompat="@drawable/ic_barcode_scanner"
+                app:tint="#6B778C"
+                android:contentDescription="스캐너" />
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
-    <!-- RecyclerView (스크롤 영역) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_delete_all"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="전체삭제"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+            android:textColor="@android:color/white"
+            app:cornerRadius="20dp"
+            app:backgroundTint="#87CEEB"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="장보기 재료추가"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            app:cornerRadius="20dp"
+            app:backgroundTint="#87CEEB"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_shopping_items"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:padding="12dp"
-        android:clipToPadding="false"/>
+        android:clipToPadding="false" />
 
-    <!-- 요약 & 공유 -->
     <LinearLayout
+        android:id="@+id/layout_summary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="8dp">
 
-        <TextView
-            android:id="@+id/tv_item_summary"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="총 0개 중 0개 담음"
-            android:textColor="#2E3A4B"
-            android:textSize="16sp" />
-
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_share_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
             android:text="목록 공유하기"
-            android:backgroundTint="#87CEEB"
-            android:textColor="@android:color/white"/>
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:cornerRadius="18dp"
+            app:backgroundTint="#87CEEB" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_finish_shopping"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="장보기 완료"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:cornerRadius="18dp"
+            app:backgroundTint="#87CEEB" />
     </LinearLayout>
 
-    <!-- 총 금액 (하단 고정) -->
     <TextView
         android:id="@+id/tv_total_price"
         android:layout_width="match_parent"
@@ -122,7 +248,6 @@
         android:textStyle="bold"
         android:textColor="#2E3A4B"
         android:gravity="start"
-        android:background="#FFFFFF"
-        android:layout_marginBottom="75dp"/>
+        android:background="#FFFFFF" />
 
 </LinearLayout>

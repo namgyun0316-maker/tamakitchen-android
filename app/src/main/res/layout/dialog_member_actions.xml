@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_member_actions"
+    android:orientation="vertical"
+    android:padding="22dp">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공용냉장고 멤버관리"
+        android:textColor="@color/pascal_blue"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="@font/gmarket_sans_light"
+        android:gravity="center"
+        android:includeFontPadding="false"/>
+
+    <TextView
+        android:id="@+id/tvDialogDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="OOO님에게 할 작업을 선택해줘"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:fontFamily="@font/gmarket_sans_light"
+        android:gravity="center"
+        android:includeFontPadding="false"/>
+
+    <LinearLayout
+        android:id="@+id/btnTransferOwner"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_dialog_action_item"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OWNER 권한 위임"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:fontFamily="@font/gmarket_sans_light"
+            android:includeFontPadding="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnKickMember"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_dialog_action_item_danger"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추방하기"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#E53935"
+            android:fontFamily="@font/gmarket_sans_light"
+            android:includeFontPadding="false"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="end"
+        android:text="취소"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/pascal_blue"
+        android:fontFamily="@font/gmarket_sans_light"
+        android:includeFontPadding="false"
+        android:padding="6dp"/>
+</LinearLayout>

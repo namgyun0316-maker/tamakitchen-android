@@ -1,62 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 네이버 로그인 아이콘 라운드 스타일 -->
+    <!-- =====================================================
+         🔤 글로벌 텍스트 스타일 (JUA 통일)
+         ===================================================== -->
+
+    <style name="AppTextTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textColor">#1A2D4E</item>
+    </style>
+
+    <style name="AppTextBody" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textColor">#1A2D4E</item>
+    </style>
+
+    <style name="AppTextBodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textColor">#5B8DB8</item>
+    </style>
+
+    <!-- =====================================================
+         🔘 버튼 기본 스타일
+         ===================================================== -->
+
+    <style name="AppButton" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">18dp</item>
+    </style>
+
+    <!-- =====================================================
+         📝 TextInput 기본 스타일
+         ===================================================== -->
+
+    <style name="AppTextInput"
+        parent="Widget.Material3.TextInputLayout.OutlinedBox">
+
+        <item name="boxStrokeColor">@color/pascal_blue</item>
+        <item name="hintTextColor">@color/pascal_blue</item>
+
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+    </style>
+
+    <!-- =====================================================
+         📱 Bottom Navigation (당근 느낌 유지 + JUA)
+         ===================================================== -->
+
+    <style name="MyBottomNav"
+        parent="Widget.MaterialComponents.BottomNavigationView">
+
+        <item name="android:background">@color/bottom_nav_bg</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="itemBackground">@android:color/transparent</item>
+        <item name="itemRippleColor">@color/bottom_nav_ripple</item>
+
+        <item name="itemTextAppearanceActive">@style/MyBottomNavText</item>
+        <item name="itemTextAppearanceInactive">@style/MyBottomNavText</item>
+
+        <item name="itemIconSize">24dp</item>
+    </style>
+
+    <style name="MyBottomNavText"
+        parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- =====================================================
+         🔔 Rounded Spinner/Dialog
+         ===================================================== -->
+
+    <style name="RoundedSpinnerDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="materialAlertDialogTheme">@style/RoundedSpinnerDialogStyle</item>
+    </style>
+
+    <style name="RoundedSpinnerDialogStyle" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:windowBackground">@drawable/bg_dialog_rounded</item>
+        <item name="shapeAppearanceSmallComponent">@style/SpinnerDialogRoundedCorner</item>
+    </style>
+
+    <style name="SpinnerDialogRoundedCorner" parent="@style/ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <!-- =====================================================
+         ✅ Rounded Image Style (복구)
+         ===================================================== -->
     <style name="RoundedImageStyle">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
 
-    <!-- 공통 계산기 버튼 스타일 -->
-    <style name="CalcButton">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">64dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    <!-- =====================================================
+         ✅ Onboarding 버튼 스타일 (복구 + Jua)
+         ===================================================== -->
+
+    <style name="OnboardingButtonPrimary" parent="Widget.Material3.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="backgroundTint">@color/pascal_blue</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
-    <!-- 숫자 버튼 -->
-    <style name="CalcButton.Number" parent="CalcButton">
-        <item name="android:textColor">#000000</item>
-    </style>
-
-    <!-- 연산자 버튼 -->
-    <style name="CalcButton.Operator" parent="CalcButton">
-        <item name="android:textColor">#1A73E8</item>
-    </style>
-
-    <!-- 기능 버튼 (C, %, ⌫ 등) -->
-    <style name="CalcButton.Function" parent="CalcButton">
-        <item name="android:textSize">18sp</item>
+    <style name="OnboardingButtonSecondary" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:textColor">#666666</item>
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="strokeColor">@color/gray_200</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
-    <!-- = 버튼 -->
-    <style name="CalcButton.Equal" parent="CalcButton">
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:background">#1A73E8</item>
+    <!-- =====================================================
+         ✅ Tool 카드 스타일 (복구)
+         ===================================================== -->
+    <style name="ToolCardStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">18dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/gray_200</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:clipChildren">false</item>
     </style>
 
-    <!-- 탭 텍스트 스타일 -->
-    <style name="TabTextStyle" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:ellipsize">none</item>
-        <item name="android:includeFontPadding">false</item>
+    <!-- =====================================================
+         ✅ Calculator Grid Button Styles
+         ===================================================== -->
+
+    <style name="CalcBtnBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_columnWeight">1</item>
         <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:fontFamily">@font/jua_regular</item>
     </style>
 
-    <!-- ✅ 커스텀 AlertDialog 스타일 -->
-    <style name="CustomAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+    <style name="CalcBtn" parent="CalcBtnBase">
+        <item name="android:textColor">@color/calc_text_primary</item>
+        <item name="android:background">@drawable/bg_calc_btn</item>
+    </style>
+
+    <style name="CalcBtnOp" parent="CalcBtnBase">
+        <item name="android:textColor">@color/calc_primary</item>
+        <item name="android:background">@drawable/bg_calc_btn_op</item>
+    </style>
+
+    <style name="CalcBtnGhost" parent="CalcBtnBase">
+        <item name="android:textColor">@color/calc_text_secondary</item>
+        <item name="android:background">@drawable/bg_calc_btn_ghost</item>
+    </style>
+
+    <style name="CalcBtnPrimary" parent="CalcBtnBase">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/bg_calc_btn_primary</item>
+    </style>
+
+    <style name="CalcToolBtn">
+        <item name="android:gravity">center</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:fontFamily">@font/jua_regular</item>
+    </style>
+
+    <!-- =========================================================
+         ✅ Fridge 카테고리 Chip 전용
+         ========================================================= -->
+
+    <style name="ChipCuteText" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FridgeCategoryChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment">center</item>
+
+        <item name="chipStartPadding">0dp</item>
+        <item name="chipEndPadding">0dp</item>
+        <item name="textStartPadding">0dp</item>
+        <item name="textEndPadding">0dp</item>
+
+        <item name="chipMinHeight">44dp</item>
+
+        <item name="android:textColor">@android:color/white</item>
+        <item name="chipBackgroundColor">@color/sky_blue</item>
+        <item name="chipCornerRadius">18dp</item>
+
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+
+        <item name="checkedIconVisible">false</item>
+    </style>
+
+    <!-- =========================================================
+         ✅ Menu list row
+         ========================================================= -->
+
+    <style name="MenuRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
+    <style name="MenuRowTitleStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#111111</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/jua_regular</item>
+    </style>
+
+    <style name="MenuDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:background">#F0F0F0</item>
+    </style>
+
+    <!-- =====================================================
+     ✅ Custom AlertDialog (복구)
+     ===================================================== -->
+
+    <style name="CustomAlertDialog"
+        parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="shapeAppearanceSmallComponent">@style/RoundedDialog</item>
-        <item name="android:background">#FFFFFF</item> <!-- 배경 흰색 -->
     </style>
 
     <style name="RoundedDialog">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item> <!-- 모서리 둥글기 -->
+        <item name="cornerSize">16dp</item>
     </style>
 
+    <!-- =========================================================
+         ✅ Recipe 카테고리 Chip 전용 (Jua 강제 적용)  << 추가/정리본
+         ========================================================= -->
+
+    <!-- Chip의 텍스트는 textAppearance를 타는 경우가 많아서 따로 빼서 강제 -->
+    <style name="RecipeChipText" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="RecipeCategoryChip" parent="Widget.MaterialComponents.Chip.Choice">
+
+        <!-- ✅ 핵심: textAppearance로 폰트까지 강제 -->
+        <item name="android:textAppearance">@style/RecipeChipText</item>
+
+        <!-- 안전빵으로 fontFamily도 같이 -->
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+
+        <!-- 기본 UI (원하면 여기서 통일) -->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="chipBackgroundColor">@color/chip_cuisine_bg</item>
+        <item name="chipCornerRadius">18dp</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+    <style name="Theme.MyApplication.UCrop"
+        parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- 추가 -->
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
 </resources>

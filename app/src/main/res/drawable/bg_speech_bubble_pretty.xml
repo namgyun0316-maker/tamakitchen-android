@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 1) 부드러운 그림자 (아래쪽/오른쪽 살짝) -->
+    <item
+        android:left="2dp"
+        android:top="3dp"
+        android:right="2dp"
+        android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#22000000" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+
+    <!-- 2) 말풍선 본체 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="22dp" />
+            <stroke android:width="1dp" android:color="#E6E7EE" />
+        </shape>
+    </item>
+
+    <!-- 3) 꼬리 그림자 -->
+    <item
+        android:gravity="bottom|start"
+        android:left="56dp"
+        android:bottom="4dp">
+        <rotate android:fromDegrees="45" android:toDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:width="18dp" android:height="18dp" />
+                <solid android:color="#22000000" />
+            </shape>
+        </rotate>
+    </item>
+
+    <!-- 4) 꼬리 (본체와 같은 색 + 얇은 테두리) -->
+    <item
+        android:gravity="bottom|start"
+        android:left="54dp"
+        android:bottom="6dp">
+        <rotate android:fromDegrees="45" android:toDegrees="45">
+            <shape android:shape="rectangle">
+                <size android:width="18dp" android:height="18dp" />
+                <solid android:color="#FFFFFF" />
+                <stroke android:width="1dp" android:color="#E6E7EE" />
+            </shape>
+        </rotate>
+    </item>
+
+</layer-list>

@@ -1,9 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Base application theme -->
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:windowBackground">@color/pastel_bg</item>
+        <item name="android:colorBackground">@color/pastel_bg</item>
+        <item name="colorSurface">@color/pastel_bg</item>
+
+        <item name="colorPrimary">@color/pascal_blue</item>
+        <item name="colorSecondary">@color/pascal_blue_light</item>
+
+        <item name="android:fontFamily">@font/jua_regular</item>
+        <item name="fontFamily">@font/jua_regular</item>
+
+        <item name="materialAlertDialogTheme">@style/RoundedSpinnerDialogStyle</item>
+        <item name="alertDialogTheme">@style/RoundedSpinnerDialogStyle</item>
+
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
     </style>
 
+    <!-- 실제 적용 테마 -->
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+
+    <!-- Android 11 이하 / 일반 SplashActivity용 시작 화면 테마 -->
+    <style name="Theme.MyApplication.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background_color</item>
+        <item name="android:colorBackground">@color/splash_background_color</item>
+
+        <item name="android:statusBarColor">@color/splash_background_color</item>
+        <item name="android:navigationBarColor">@color/splash_background_color</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
 </resources>

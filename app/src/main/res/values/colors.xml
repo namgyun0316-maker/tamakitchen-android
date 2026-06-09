@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- =========================
+         기본 테마 색 (기존 유지)
+         ========================= -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,16 +11,107 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- =========================
+         블루 계열
+         ========================= -->
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
+
+    <!-- =========================
+         공통 색
+         ========================= -->
     <color name="black_overlay">#66000000</color>
     <color name="sky_blue">#87CEEB</color>
     <color name="pale_green">#98FB98</color>
     <color name="warning_orange">#FFA500</color>
+
     <color name="light_gray">#F5F5F5</color>
+    <color name="light_gray_step">#E0E0E0</color>
     <color name="gray">#CCCCCC</color>
     <color name="dark_gray">#666666</color>
+    <color name="darker_gray">#777777</color>
+
     <color name="login_bg">#E3F2FD</color>
+
+    <!-- =========================
+         Chip
+         ========================= -->
+    <color name="chip_background_color_selected">#87CEEB</color>
+    <color name="chip_background_color_unselected">#FFFFFF</color>
+
+    <!-- =========================
+         버튼
+         ========================= -->
+    <color name="sky_blue_button">#87CEEB</color>
+    <color name="purple_button">#6A4BC3</color>
+
+    <!-- =========================
+         Ripple
+         ========================= -->
+    <color name="nav_ripple_color">#1A6A5ACD</color>
+
+    <!-- =========================
+         Calculator 톤 (기존 유지)
+         ========================= -->
+    <color name="calc_primary">#4A90E2</color>
+    <color name="calc_primary_soft">#E9F2FF</color>
+    <color name="calc_primary_pressed">#3F7FC7</color>
+
+    <color name="calc_bg">#FFFFFF</color>
+    <color name="calc_card">#FFFFFF</color>
+    <color name="calc_line">#E6ECF5</color>
+
+    <color name="calc_btn">#E9F2FF</color>
+    <color name="calc_btn_pressed">#D6E8FF</color>
+
+    <color name="calc_text_primary">#0F172A</color>
+    <color name="calc_text_secondary">#64748B</color>
+
+    <!-- Calc2 -->
+    <color name="calc2_bg">#E9F2FF</color>
+    <color name="calc2_text_primary">#111111</color>
+    <color name="calc2_text_secondary">#8A8A8A</color>
+    <color name="calc2_icon_gray">#8A8A8A</color>
+    <color name="calc2_divider">#E6E6E6</color>
+    <color name="calc2_green">#4A90E2</color>
+
+    <!-- =========================
+         🔵 앱 메인 톤 (추가/정리)
+         ========================= -->
+    <color name="pascal_blue">#87CEEB</color>
+    <color name="pascal_blue_light">#A8D7F0</color>
+    <color name="pastel_bg">#F0F8FF</color>
+    <color name="blue_bg_soft">#EAF6FF</color>
+
+    <!-- 텍스트 -->
+    <color name="text_main">#1A2D4E</color>
+    <color name="text_sub">#5B8DB8</color>
+
+    <!-- 스트로크/구분선 -->
+    <color name="gray_stroke_soft">#E6E6E6</color>
+    <color name="gray_text_soft">#4A4A4A</color>
+    <color name="gray_200">#E3EAF2</color>
+
+    <!-- =========================
+         📷 Scanner 전용 색상 (추가)
+         ========================= -->
+    <color name="scanner_scrim_dark">#7A000000</color>
+    <color name="scanner_scrim_light">#33000000</color>
+    <color name="scanner_guide_stroke">#CCFFFFFF</color>
+    <color name="scanner_highlight_start">#33FFFFFF</color>
+    <color name="scanner_highlight_end">#00FFFFFF</color>
+    <color name="scanner_scanline_center">#CCFFFFFF</color>
+
+    <!-- =========================
+         Bottom Navigation
+         ========================= -->
+    <color name="bottom_nav_bg">#FFFFFF</color>
+    <color name="bottom_nav_selected">#111111</color>
+    <color name="bottom_nav_unselected">#9AA0A6</color>
+    <color name="bottom_nav_ripple">#1A000000</color>
+    <color name="scanner_scrim_dark_soft">#52000000</color>
+    <color name="splash_background_color">#FEF8ED</color>
 </resources>

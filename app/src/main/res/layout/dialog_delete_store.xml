@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="24dp"
+    app:cardCornerRadius="26dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    android:backgroundTint="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- ✅ 원형 아이콘 영역 -->
+        <FrameLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="16dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_circle_store"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_store"
+                android:scaleType="fitCenter"/>
+        </FrameLayout>
+
+        <!-- 제목 -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="판매점 삭제"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1F2A37"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- 판매점 이름 -->
+        <TextView
+            android:id="@+id/tvItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="'롯데마트'"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1F2A37"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 설명 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정말 삭제하시겠습니까?\n삭제된 판매점은 복구할 수 없습니다."
+            android:textSize="14sp"
+            android:textColor="#6B778C"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 버튼 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="취소"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#6B778C"/>
+
+            <TextView
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="삭제"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#E74C3C"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

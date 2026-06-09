@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_store_spend_picker_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:background="@android:color/transparent">
+
+    <!-- 카드 컨테이너 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dialog_round_white"
+        android:padding="18dp">
+
+        <!-- 타이틀 -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="판매점 선택"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2E3A4B"
+            android:gravity="center" />
+
+        <!-- 서브 타이틀(날짜 + 총합) -->
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="2026-01-27 · 총 0원"
+            android:textSize="13sp"
+            android:textColor="#7A8798"
+            android:gravity="center" />
+
+        <!-- 리스트 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStores"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginTop="14dp"
+            android:overScrollMode="never" />
+
+        <!-- 닫기 -->
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="닫기"
+            android:textStyle="bold"
+            android:textColor="#2E3A4B"
+            android:background="@drawable/bg_date_nav_btn" />
+
+    </LinearLayout>
+
+</LinearLayout>

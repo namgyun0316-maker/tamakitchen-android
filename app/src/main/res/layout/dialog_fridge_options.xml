@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="14dp">
+
+        <!-- 유통기한 순 정렬 -->
+        <TextView
+            android:id="@+id/item_sort_expiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="10dp"
+            android:text="유통기한 순 정렬"
+            android:textSize="18sp"
+            android:textColor="#222222" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E9E9E9" />
+
+        <!-- 이름 순 정렬 -->
+        <TextView
+            android:id="@+id/item_sort_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="10dp"
+            android:text="이름 순 정렬"
+            android:textSize="18sp"
+            android:textColor="#222222" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E9E9E9" />
+
+        <!-- 유통기한 지난 항목 삭제 -->
+        <TextView
+            android:id="@+id/item_delete_expired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="10dp"
+            android:text="유통기한 지난 항목 삭제"
+            android:textSize="18sp"
+            android:textColor="#222222" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E9E9E9" />
+
+        <!-- ✅ 재료 선택 삭제 (재료 전체 삭제 바로 위) -->
+        <TextView
+            android:id="@+id/item_select_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="10dp"
+            android:text="재료 선택 삭제"
+            android:textSize="18sp"
+            android:textColor="#222222" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E9E9E9" />
+
+        <!-- 재료 전체 삭제 -->
+        <TextView
+            android:id="@+id/item_delete_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="10dp"
+            android:text="재료 전체 삭제"
+            android:textSize="18sp"
+            android:textColor="#222222" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/rounded_dialog_background">
+
+    <!-- 제목 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상품 수정"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 상품 이름 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상품이름"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="상품 이름 입력"
+        android:background="@drawable/rounded_background"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 수량 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수량"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/btn_decrease_edit1"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:text="-"
+            android:textSize="30sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:background="@drawable/button_outline"/>
+
+        <TextView
+            android:id="@+id/tv_quantity_edit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="16dp"/>
+
+        <TextView
+            android:id="@+id/btn_increase_edit1"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:textSize="20sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:background="@drawable/button_outline"/>
+
+    </LinearLayout>
+
+    <!-- 보관방법 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="보관방법"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_storage_edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_storage_fridge_edit1"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="냉장"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/chip_stroke_selector"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_storage_freezer_edit1"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="냉동"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/chip_stroke_selector"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_storage_room_edit1"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="실온"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/chip_stroke_selector"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_storage_etc_edit1"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기타"
+            android:checkable="true"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            android:textColor="@color/chip_text_selector"
+            app:chipStrokeWidth="1dp"
+            app:chipStrokeColor="@color/chip_stroke_selector"/>
+    </com.google.android.material.chip.ChipGroup>
+
+
+    <!-- 유통기한 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="유통기한 (선택사항)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tv_expiry_date_edit1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:background="@drawable/rounded_background"
+            android:text="유통기한 선택 (선택사항)"
+            android:textColor="#666666"/>
+
+        <Button
+            android:id="@+id/btn_pick_date_edit1"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="날짜 선택"
+            android:backgroundTint="#87CEEB"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_cancel_edit1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="취소"
+            android:textSize="16sp"
+            android:backgroundTint="#87CEEB"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btn_save_edit1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="수정"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#87CEEB"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

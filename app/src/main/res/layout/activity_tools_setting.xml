@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+    <!-- ===== 상단 바 ===== -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:padding="6dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTopTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="조리도구 설정"
+        android:textColor="#111111"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack" />
+
+    <!-- ===== 스크롤 영역 ===== -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:clipToPadding="false"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/rootContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            android:clipChildren="false">
+
+            <!-- ===== 조리도구 카드 ===== -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E9EDF2"
+                app:cardBackgroundColor="@android:color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/toolsInnerContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="28dp">
+
+                    <include
+                        android:id="@+id/toolAirFryer"
+                        layout="@layout/item_tool_base" />
+
+                    <include
+                        android:id="@+id/toolOven"
+                        layout="@layout/item_tool_base" />
+
+                    <include
+                        android:id="@+id/toolMicrowave"
+                        layout="@layout/item_tool_base" />
+
+                    <include
+                        android:id="@+id/toolBlender"
+                        layout="@layout/item_tool_base" />
+
+                    <include
+                        android:id="@+id/toolRiceCooker"
+                        layout="@layout/item_tool_base" />
+
+                    <include
+                        android:id="@+id/toolSteamer"
+                        layout="@layout/item_tool_base" />
+
+                    <include
+                        android:id="@+id/toolGasRange"
+                        layout="@layout/item_tool_base" />
+
+                    <include
+                        android:id="@+id/toolInduction"
+                        layout="@layout/item_tool_base" />
+
+                    <androidx.constraintlayout.helper.widget.Flow
+                        android:id="@+id/flowTools"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:flow_wrapMode="aligned"
+                        app:flow_maxElementsWrap="2"
+                        app:flow_horizontalGap="14dp"
+                        app:flow_verticalGap="14dp"
+                        app:flow_horizontalStyle="spread"
+                        app:flow_horizontalAlign="center"
+                        app:constraint_referenced_ids="toolAirFryer,toolOven,toolMicrowave,toolBlender,toolRiceCooker,toolSteamer,toolGasRange,toolInduction"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 카드와 버튼 사이 여백 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="18dp"/>
+
+            <!-- 저장하기 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="저장하기"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                app:cornerRadius="18dp"
+                app:backgroundTint="@color/pascal_blue" />
+
+            <!-- 하단 여유 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="18dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

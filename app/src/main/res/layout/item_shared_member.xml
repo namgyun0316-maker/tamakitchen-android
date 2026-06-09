@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:layout_marginTop="12dp"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#EDEDED"
+    app:cardBackgroundColor="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp">
+
+        <!-- 왕관 (OWNER만) -->
+        <ImageView
+            android:id="@+id/ivCrown"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_crown"
+            android:contentDescription="owner"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- 닉네임 -->
+        <TextView
+            android:id="@+id/tvNick"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="재남7"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#111111"
+            android:fontFamily="@font/gmarket_sans_light"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toEndOf="@id/ivCrown"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toStartOf="@id/tvRole"
+            android:layout_marginEnd="10dp"/>
+
+        <!-- ROLE (OWNER/MEMBER) : 항상 같은 위치(오른쪽) -->
+        <TextView
+            android:id="@+id/tvRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OWNER"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#9A9A9A"
+            android:fontFamily="@font/gmarket_sans_light"
+            android:includeFontPadding="false"
+            app:layout_constraintEnd_toStartOf="@id/ivMore"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="10dp"/>
+
+        <!-- ⋮ 메뉴 (내가 OWNER일 때 + 상대 멤버일 때만) -->
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_more_vert"
+            android:tint="#9A9A9A"
+            android:contentDescription="more"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

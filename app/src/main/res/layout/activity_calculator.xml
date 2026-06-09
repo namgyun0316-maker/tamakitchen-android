@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calc_bg"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:paddingStart="14dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="14dp"
+    android:paddingBottom="34dp">
+
+    <!-- 표시부 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.05"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        android:paddingBottom="14dp">
+
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="0"
+            android:textColor="@color/calc_text_primary"
+            android:textSize="54sp"
+            android:textStyle="bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@color/calc_text_secondary"
+            android:textSize="18sp"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+    <!-- 툴바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/btnHistory"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_clock_thin"
+            android:tint="@color/calc_text_secondary"
+            android:contentDescription="history" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/btnBackTop"
+            style="@style/CalcToolBtn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:text="⌫"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/calc_primary" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/calc_line"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 키패드 -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:useDefaultMargins="true">
+
+        <TextView
+            android:id="@+id/btnClear"
+            style="@style/CalcBtnGhost"
+            android:text="C" />
+
+        <TextView
+            android:id="@+id/btnParen"
+            style="@style/CalcBtnGhost"
+            android:text="( )" />
+
+        <TextView
+            android:id="@+id/btnPercent"
+            style="@style/CalcBtnGhost"
+            android:text="%" />
+
+        <TextView
+            android:id="@+id/btnDiv"
+            style="@style/CalcBtnOp"
+            android:text="÷" />
+
+        <TextView
+            android:id="@+id/btn7"
+            style="@style/CalcBtn"
+            android:text="7" />
+
+        <TextView
+            android:id="@+id/btn8"
+            style="@style/CalcBtn"
+            android:text="8" />
+
+        <TextView
+            android:id="@+id/btn9"
+            style="@style/CalcBtn"
+            android:text="9" />
+
+        <TextView
+            android:id="@+id/btnMul"
+            style="@style/CalcBtnOp"
+            android:text="×" />
+
+        <TextView
+            android:id="@+id/btn4"
+            style="@style/CalcBtn"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/btn5"
+            style="@style/CalcBtn"
+            android:text="5" />
+
+        <TextView
+            android:id="@+id/btn6"
+            style="@style/CalcBtn"
+            android:text="6" />
+
+        <TextView
+            android:id="@+id/btnMinus"
+            style="@style/CalcBtnOp"
+            android:text="−" />
+
+        <TextView
+            android:id="@+id/btn1"
+            style="@style/CalcBtn"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/btn2"
+            style="@style/CalcBtn"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/btn3"
+            style="@style/CalcBtn"
+            android:text="3" />
+
+        <TextView
+            android:id="@+id/btnPlus"
+            style="@style/CalcBtnOp"
+            android:text="+" />
+
+        <TextView
+            android:id="@+id/btnPlusMinus"
+            style="@style/CalcBtn"
+            android:text="+/−" />
+
+        <TextView
+            android:id="@+id/btn0"
+            style="@style/CalcBtn"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/btnDot"
+            style="@style/CalcBtn"
+            android:text="." />
+
+        <TextView
+            android:id="@+id/btnEqual"
+            style="@style/CalcBtnPrimary"
+            android:text="=" />
+    </GridLayout>
+
+</LinearLayout>

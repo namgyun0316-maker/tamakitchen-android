@@ -1,80 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
-
-    <!-- 상품 이름 -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="상품이름 "
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp"/>
-
-    <EditText
-        android:id="@+id/et_edit_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="상품 이름 입력"/>
-
-    <!-- 가격 -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="가격 "
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="4dp"/>
-
-    <EditText
-        android:id="@+id/et_edit_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="가격 입력"/>
-
-    <!-- 수량 -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="수량 "
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="4dp"/>
+    android:padding="18dp"
+    android:background="@android:color/transparent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="22dp"
+        android:background="@drawable/bg_dialog_round_white">
 
         <TextView
-            android:id="@+id/btn_decrease"
-            android:layout_width="48dp"
-            android:layout_height="40dp"
-            android:text="-"
-            android:textSize="30sp"
-            android:textColor="#666666"
-            android:gravity="center"
-            android:background="@drawable/button_outline"/>
-
-        <TextView
-            android:id="@+id/tv_quantity"
+            android:id="@+id/tvDialogTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="18sp"
-            android:layout_marginHorizontal="16dp"/>
+            android:text="상품 수정"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E3A4B"
+            android:layout_gravity="center_horizontal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <TextView
-            android:id="@+id/btn_increase"
-            android:layout_width="48dp"
-            android:layout_height="40dp"
-            android:text="+"
-            android:textSize="20sp"
-            android:textColor="#666666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상품이름"
+            android:textSize="14sp"
+            android:textColor="#7A869A"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/et_edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_edit_round_outline"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:hint="예) 양배추"
+            android:textColor="#2E3A4B"
+            android:textColorHint="#B0B8C1"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가격"
+            android:textSize="14sp"
+            android:textColor="#7A869A"
+            android:layout_marginTop="14dp" />
+
+        <EditText
+            android:id="@+id/et_edit_price"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_edit_round_outline"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:hint="0"
+            android:textColor="#2E3A4B"
+            android:textColorHint="#B0B8C1"
+            android:inputType="number"
+            android:singleLine="true"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수량"
+            android:textSize="14sp"
+            android:textColor="#7A869A"
+            android:layout_marginTop="16dp" />
+
+        <!-- 수량 컨트롤 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:background="@drawable/button_outline"/>
+            android:layout_marginTop="10dp"
+            android:descendantFocusability="afterDescendants">
+
+            <TextView
+                android:id="@+id/btn_decrease"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:text="-"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#2E3A4B"
+                android:gravity="center"
+                android:background="@drawable/bg_qty_btn_outline"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- ✅ ID를 tv_quantity로 되돌림 (Fragment 코드랑 맞추기) -->
+            <EditText
+                android:id="@+id/tv_quantity"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#2E3A4B"
+
+                android:background="@drawable/bg_edit_round_outline"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+
+                android:inputType="numberDecimal"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:clickable="true"
+                android:enabled="true"
+                android:cursorVisible="true" />
+
+            <TextView
+                android:id="@+id/btn_increase"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:text="+"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#2E3A4B"
+                android:gravity="center"
+                android:background="@drawable/bg_qty_btn_outline"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="18dp">
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="취소"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#6B778C"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="저장"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#5CB6E4"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </LinearLayout>

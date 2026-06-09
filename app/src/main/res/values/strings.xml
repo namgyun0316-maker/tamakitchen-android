@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">타마키친</string>
+
     <string name="naver_client_id">qk1iNZajoKUSWfdjza07</string>
     <string name="naver_client_secret">Ayzo3kJymC</string>
+
+    <!-- ✅ 카카오 로그인 설정: 반드시 "네이티브 앱 키"로 교체 -->
+    <string name="kakao_app_key">fc2b0cce7b9a844b7de80240306e0d89</string>
 
     <string name="naver_login">네이버 로그인</string>
     <string name="kakao_login">카카오 로그인</string>
@@ -16,11 +20,11 @@
 
     <string name="unit_prompt">단위를 선택하세요</string>
 
+    <string name="item_garlic">마늘</string>
+    <string name="item_onion">양파</string>
+    <string name="item_apple">사과</string>
+    <string name="item_meat">고기</string>
 
-        <string name="item_garlic">마늘</string>
-        <string name="item_onion">양파</string>
-        <string name="item_apple">사과</string>
-        <string name="item_meat">고기</string>
-
+    <string name="font_onboarding_rounded">sans-serif-rounded</string>
 
 </resources>

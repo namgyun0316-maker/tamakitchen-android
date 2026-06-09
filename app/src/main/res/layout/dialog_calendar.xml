@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dialog_round_white"
+        android:padding="18dp">
+
+        <!-- 상단 월 네비 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/btnPrevMonth"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:text="〈"
+                android:textSize="18sp"
+                android:textColor="#2E3A4B" />
+
+            <TextView
+                android:id="@+id/tvMonthTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2026년 1월"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#2E3A4B" />
+
+            <TextView
+                android:id="@+id/btnNextMonth"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:text="〉"
+                android:textSize="18sp"
+                android:textColor="#2E3A4B" />
+        </LinearLayout>
+
+        <!-- 요일 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="#EEF6FB"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="일" android:gravity="center" android:textStyle="bold" android:textColor="#E64A4A"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="월" android:gravity="center" android:textStyle="bold" android:textColor="#2E3A4B"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="화" android:gravity="center" android:textStyle="bold" android:textColor="#2E3A4B"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="수" android:gravity="center" android:textStyle="bold" android:textColor="#2E3A4B"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="목" android:gravity="center" android:textStyle="bold" android:textColor="#2E3A4B"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="금" android:gravity="center" android:textStyle="bold" android:textColor="#2E3A4B"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="토" android:gravity="center" android:textStyle="bold" android:textColor="#2E74FF"/>
+        </LinearLayout>
+
+        <!-- 달력 그리드 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCalendarDays"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:layout_marginTop="10dp"
+            android:overScrollMode="never" />
+
+        <!-- 하단: 월 총지출 + 판매점별 top3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:background="#EEF6FB"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/tvMonthTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이번 달 총 지출  -0원"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#2E3A4B" />
+
+            <TextView
+                android:id="@+id/tvStoreTop3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textSize="13sp"
+                android:textColor="#2E3A4B" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FC"
+    android:orientation="vertical"
+    android:padding="18dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="영수증 가계부 등록"
+        android:textColor="#111111"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLedgerReceiptSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="선택 0건 · 합계 0원"
+        android:textColor="#5E748A"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvLedgerReceiptDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
+        android:padding="14dp"
+        android:text="날짜: 2026-03-31"
+        android:textColor="#2E3A4B"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvLedgerReceiptStore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:padding="14dp"
+        android:text="판매점: 미지정"
+        android:textColor="#2E3A4B"
+        android:textSize="15sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLedgerReceiptSelectAll"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="14dp"
+        android:text="전체해제"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#87CEEB"
+        app:cornerRadius="18dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLedgerReceipt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLedgerReceiptSave"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="가계부에 저장"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:backgroundTint="#5CB6E4"
+        app:cornerRadius="22dp" />
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_member_actions"
+    android:orientation="vertical"
+    android:padding="22dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="권한 위임"
+        android:textColor="@color/pascal_blue"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="@font/gmarket_sans_light"
+        android:gravity="center"
+        android:includeFontPadding="false"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="OOO에게 OWNER 권한을 넘길까?\n넘기면 나는 MEMBER가 돼."
+        android:textColor="#555555"
+        android:textSize="14sp"
+        android:fontFamily="@font/gmarket_sans_light"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:includeFontPadding="false"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/pascal_blue"
+            android:fontFamily="@font/gmarket_sans_light"
+            android:includeFontPadding="false"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="넘기기"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/pascal_blue"
+            android:fontFamily="@font/gmarket_sans_light"
+            android:includeFontPadding="false"
+            android:padding="8dp"/>
+    </LinearLayout>
+</LinearLayout>

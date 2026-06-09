@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="14dp"
+    android:paddingEnd="14dp"
+    android:background="@drawable/bg_store_spend_row">
+
+    <TextView
+        android:id="@+id/tvStoreName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="롯데마트"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#2E3A4B"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="-5,000원"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#2F80ED" />
+
+    <TextView
+        android:id="@+id/btnMove"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:text="이동"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="#2E3A4B"
+        android:background="@drawable/bg_date_nav_btn" />
+
+</LinearLayout>

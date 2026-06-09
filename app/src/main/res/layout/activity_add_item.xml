@@ -1,314 +1,348 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
 
-    <!-- 본문 -->
-    <ScrollView
-        android:id="@+id/scrollView"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp"
+        app:tabMode="scrollable"
+        app:tabIndicatorColor="#87CEEB"
+        app:tabSelectedTextColor="#2E3A4B"
+        app:tabTextColor="#9AA4B2"
+        app:tabRippleColor="#1A87CEEB"
+        app:tabIndicatorFullWidth="false"
+        app:tabPaddingStart="18dp"
+        app:tabPaddingEnd="18dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="10dp"
+        app:hintEnabled="false"
+        app:startIconDrawable="@android:drawable/ic_menu_search"
+        app:startIconTint="#9AA4B2"
+        app:endIconMode="clear_text"
+        app:endIconTint="#9AA4B2"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="18dp"
+        app:boxCornerRadiusTopEnd="18dp"
+        app:boxCornerRadiusBottomStart="18dp"
+        app:boxCornerRadiusBottomEnd="18dp"
+        app:boxStrokeColor="#D8E6F1"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="2dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="상품명 검색"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textColor="#2E3A4B"
+            android:textColorHint="#B0BAC9" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_icons"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingHorizontal="10dp"
+        android:paddingBottom="10dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_selected_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:backgroundTint="@android:color/white"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="10dp"
+        app:strokeColor="#E6ECF3"
+        app:strokeWidth="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="16dp">
 
-            <!-- 카테고리 탭 -->
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_categories"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/tab_background_rounded"
-                android:padding="6dp"
-                app:tabMode="scrollable"
-                app:tabGravity="start"
-                app:tabIndicatorColor="#666666"
-                app:tabSelectedTextColor="#333333"
-                app:tabTextColor="#666666"
-                app:tabRippleColor="#E0E0E0"
-                app:tabMinWidth="0dp"
-                app:tabPaddingStart="24dp"
-                app:tabPaddingEnd="24dp"
-                app:tabTextAppearance="@style/TabTextStyle"
-                app:tabContentStart="12dp"/>
+            <View
+                android:layout_width="44dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/bg_panel_handle" />
 
-            <!-- 검색바 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="12dp"
                 android:gravity="center_vertical">
 
-                <EditText
-                    android:id="@+id/et_search"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:hint="상품명 검색"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:background="@drawable/search_edit_text_background"
-                    android:imeOptions="actionSearch"
-                    android:singleLine="true"/>
-
-                <ImageView
-                    android:id="@+id/btn_clear_search"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@android:drawable/ic_menu_close_clear_cancel"
-                    android:contentDescription="검색 초기화"
-                    android:visibility="gone"
-                    android:padding="8dp"
-                    android:layout_marginStart="8dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackgroundBorderless"/>
-            </LinearLayout>
-
-            <!-- 상품 선택 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="상품 선택"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_icons"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:nestedScrollingEnabled="false"
-                android:padding="4dp"/>
-
-            <!-- 상품 선택 안내 -->
-            <TextView
-                android:id="@+id/tv_select_guide"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="위에서 상품을 선택해주세요"
-                android:textSize="14sp"
-                android:textColor="#999999"
-                android:gravity="center"
-                android:padding="24dp"
-                android:layout_marginBottom="8dp"
-                android:visibility="visible"/>
-
-            <!-- 선택된 상품 정보 -->
-            <LinearLayout
-                android:id="@+id/layout_selected_item"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone"
-                android:background="@drawable/selected_item_background"
-                android:padding="16dp"
-                android:layout_marginBottom="24dp">
-
-                <!-- 선택된 아이콘 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="12dp"
+                    android:backgroundTint="#F6FAFF"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#E6ECF3"
+                    app:strokeWidth="1dp">
 
                     <ImageView
                         android:id="@+id/iv_selected_product"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_marginEnd="12dp"
-                        android:scaleType="fitCenter"/>
-
-                    <TextView
-                        android:id="@+id/tv_selected_product"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="16sp"
-                        android:textColor="#333333"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-
-                <!-- 카테고리 선택 -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="카테고리"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
-
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/chip_group_category"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:singleSelection="true">
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_category_vegetables"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:text="채소"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_category_fruits"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:text="과일"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_category_meat"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:text="육류"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_category_dairy"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:text="유제품"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_category_frozen"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:text="냉동식품"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip_category_etc"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        android:text="기타"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:checked="true"/>
-                </com.google.android.material.chip.ChipGroup>
-
-                <!-- 수량 -->
-                <LinearLayout
-                    android:id="@+id/layout_quantity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="수량"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"/>
-
-                    <TextView
-                        android:id="@+id/btn_decrease"
-                        android:layout_width="48dp"
-                        android:layout_height="40dp"
-                        android:text="-"
-                        android:textSize="30sp"
-                        android:textColor="#666666"
-                        android:gravity="center"
-                        android:background="@drawable/button_outline"/>
-
-                    <TextView
-                        android:id="@+id/tv_quantity"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginEnd="12dp"/>
-
-                    <TextView
-                        android:id="@+id/btn_increase"
-                        android:layout_width="48dp"
-                        android:layout_height="40dp"
-                        android:text="+"
-                        android:textSize="20sp"
-                        android:textColor="#666666"
-                        android:gravity="center"
-                        android:background="@drawable/button_outline"/>
-
-
-                </LinearLayout>
-
-                <!-- 가격 -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="가격 (선택사항)"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12dp"
+                        android:contentDescription="선택된 아이콘"
+                        android:scaleType="centerInside" />
+                </com.google.android.material.card.MaterialCardView>
 
                 <EditText
+                    android:id="@+id/et_selected_product"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="상품명 입력"
+                    android:maxLines="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#2E3A4B"
+                    android:textColorHint="#B0BAC9"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="14dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_round_outline"
+                    android:padding="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_decrease"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:text="-"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        app:cornerRadius="20dp"
+                        app:strokeColor="#D6DEE8"
+                        app:strokeWidth="1dp" />
+
+                    <FrameLayout
+                        android:id="@+id/qty_click_area"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/tv_quantity"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#2E3A4B" />
+                    </FrameLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_increase"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:text="+"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        app:cornerRadius="20dp"
+                        app:strokeColor="#D6DEE8"
+                        app:strokeWidth="1dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:text="개"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#2E3A4B"
+                    android:background="@drawable/bg_unit_chip"
+                    android:drawableEnd="@android:drawable/arrow_down_float"
+                    android:drawablePadding="8dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="가격 (선택)"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxStrokeColor="#D8E6F1"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_price"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="가격을 입력하세요"
-                    android:background="@drawable/search_edit_text_background"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
                     android:padding="12dp"
-                    android:inputType="number"
-                    android:singleLine="true"/>
+                    android:textColor="#2E3A4B"
+                    android:textColorHint="#B0BAC9" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ✅ 최근 구매가 + 적용 버튼 -->
+            <LinearLayout
+                android:id="@+id/layout_recent_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <!-- ✅ 왼쪽 정보 영역(세로 2줄) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_recent_price_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="현재 판매점 최근가: 3,000원"
+                        android:textSize="13sp"
+                        android:textColor="#7A869A"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:id="@+id/tv_recent_price_sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="(0일 전 · 롯데마트)"
+                        android:textSize="12sp"
+                        android:textColor="#9AA4B2"
+                        android:layout_marginTop="2dp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_apply_recent_price"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="최근가 적용"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="14dp"
+                    app:cornerRadius="18dp"
+                    app:strokeColor="#D8E6F1"
+                    app:strokeWidth="1dp" />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="14dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="취소"
+                    android:textStyle="bold"
+                    android:textColor="#2E3A4B"
+                    android:backgroundTint="#EEF2F7"
+                    app:cornerRadius="26dp"
+                    android:layout_marginEnd="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="추가"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:enabled="false"
+                    android:backgroundTint="#87CEEB"
+                    app:cornerRadius="26dp" />
+            </LinearLayout>
+
         </LinearLayout>
-    </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <!-- 하단 버튼 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@android:color/white"
-        android:elevation="4dp">
-
-        <Button
-            android:id="@+id/btn_cancel"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:text="취소"
-            android:textSize="16sp"
-            android:backgroundTint="#87CEEB"
-            android:textColor="@android:color/white"/>
-
-        <Button
-            android:id="@+id/btn_add"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:text="추가"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:backgroundTint="#87CEEB"
-            android:textColor="@android:color/white"
-            android:enabled="false"/>
-    </LinearLayout>
 </LinearLayout>

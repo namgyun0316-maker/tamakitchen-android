@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="10dp"
+    android:background="@android:color/white">
+
+    <!-- 재료명 -->
+    <TextView
+        android:id="@+id/tvRowName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:text="당근"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <!-- 수량 텍스트 -->
+    <TextView
+        android:id="@+id/tvRowQty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:layout_marginStart="8dp"
+        android:text="1/2개"
+        android:textColor="#444444"
+        android:textSize="14sp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+    <!-- 필수/선택 -->
+    <TextView
+        android:id="@+id/tvRowType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="필수"
+        android:textColor="#666666"
+        android:textSize="13sp" />
+
+    <!-- 삭제 버튼 -->
+    <Button
+        android:id="@+id/btnRowRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginStart="10dp"
+        android:text="삭제"
+        android:textAllCaps="false"
+        android:backgroundTint="#E57373"
+        android:textColor="@android:color/white" />
+</LinearLayout>

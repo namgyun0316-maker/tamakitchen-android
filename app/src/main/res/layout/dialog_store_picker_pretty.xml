@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:background="@android:color/transparent">
+
+    <!-- ✅ 둥근 카드 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp"
+        android:background="@drawable/bg_dialog_round_white">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="판매점 선택"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2E3A4B" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_edit_round_outline"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:hint="판매점 검색 (없으면 새로 추가)"
+            android:textColor="#2E3A4B"
+            android:textColorHint="#B0B8C1"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="14dp" />
+
+        <!-- ✅ 목록 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStores"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginTop="14dp"
+            android:overScrollMode="never" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- ✅ 하단 버튼 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/btnClose"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="닫기"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#6B778C" />
+
+            <TextView
+                android:id="@+id/btnAddNew"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="새로 추가"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#5CB6E4" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

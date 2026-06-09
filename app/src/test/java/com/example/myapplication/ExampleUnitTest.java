@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.namgyun.tamakitchen;
 
 import org.junit.Test;
 

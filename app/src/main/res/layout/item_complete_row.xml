@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="14dp">
+
+    <!-- ✅ 기본 CheckBox 버튼 제거 + 커스텀 selector 강제 -->
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cb_complete"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:button="@null"
+        app:buttonCompat="@drawable/ic_box_check_selector"
+        app:buttonTint="@null"
+        android:background="@null"
+        android:padding="0dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp" />
+
+    <ImageView
+        android:id="@+id/iv_complete_icon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_complete_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자두"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#1F2A37"
+            android:includeFontPadding="false"/>
+
+        <TextView
+            android:id="@+id/tv_complete_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="1개"
+            android:textSize="13sp"
+            android:textColor="#6B778C"
+            android:includeFontPadding="false"/>
+    </LinearLayout>
+
+</LinearLayout>
