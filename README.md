@@ -63,3 +63,17 @@ MySQL
 ## 👨‍💻 개발자
 
 남균 윤
+
+## 📱 앱 화면
+
+| 홈 | 냉장고 |
+|---|---|
+| ![](images/home.jpg) | ![](images/fridge.jpg) |
+
+| 레시피 | 장보기 |
+|---|---|
+| ![](images/recipe.jpg) | ![](images/shopping.jpg) |
+
+| 도감 | 메뉴 |
+|---|---|
+| ![](images/catalog.jpg) | ![](images/menu.jpg) |
